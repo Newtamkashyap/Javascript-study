@@ -47,3 +47,18 @@ console.log(`${num}*${i}=${num*i}`)
 }
 // table(3,20,5)
 // table(5,20,5)
+
+
+function printTable(num){
+    
+    let temp=[];
+
+for(i=1;i<=10;i++){
+ 
+   temp.push(`${num}*${i}=${num*i}`)
+}
+return temp;
+}
+
+console.log(printTable(12))
+
