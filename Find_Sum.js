@@ -26,17 +26,18 @@ console.log(sumOfNumber(5,10))
 
 
 function printTable(){
-    // let num=2
+     let num=2
 for(i=1;i<=10;i++){
-    // console.log(`${num}*${i}=${num*i}`)
-    console.log(i)
+    console.log(`${num}*${i}=${num*i}`)
+   
 }
 }
-console.log(printTable())
+printTable()
 
-function table(num){
-    for(num=1;num<=10;num+1){
-
+function table(num,j,i){
+    for(i;i<=j;i++){
+console.log(`${num}*${i}=${num*i}`)
     }
 }
-console.log(table(3))
+table(3,20,5)
+table(5,20,5)
