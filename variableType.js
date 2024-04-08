@@ -10,7 +10,7 @@
 // varibale declation keyword [var,let, const]
 // variable phase [declaration -> initialization -> assignment or reassignment]
 // declaration
-var x;  // any varibale declared with out without value at first time is called variable declaration
+var x;  // any varibale declared with or without value at first time is called variable declaration
 let state; //variable declaration
 
 // initialization

@@ -82,3 +82,15 @@ function getAreaOfTraingle1(base,height){
     return areaOfTraingle
     }
     console.log(getAreaOfTraingle1(100,70))
+
+  function findAreaOfCircle(){
+    // a=pi*r*r
+    const pi=3.14;
+    let radius=5;
+    let areaOfCircle=pi*radius*radius
+    return areaOfCircle
+  }  
+  console.log(findAreaOfCircle())
+
+
+

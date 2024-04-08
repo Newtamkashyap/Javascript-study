@@ -1011,5 +1011,841 @@ let:
 
 
 
-Date: 16 feb 2024 -day4
+Date: 16 feb 2024 -day5
 =========================================================
+
+JavaScript Output
+- alert()
+- confirm()
+- document.write()
+- innerText
+- innerHTML
+
+                        outerHTML
+- It renders output by replacing the existing element with new element.
+
+Syntax:
+    document.querySelector("p").outerHTML = "<h2> Welcome </h2>";
+
+                        textContent()
+- It is similar to innerText.
+- It is more faster than innerText.
+- It is light weight.
+
+Syntax:
+    document.querySelector("p").textContent = "Welcome";
+
+
+                        Console Methods
+- Console is a command line terminal.
+- It is a tool provided by browser.
+- Developers can test all commands in the console.
+- Console can display messages as output using various contextual methods
+
+        log()    
+        warn()
+        info()
+        error()
+        debug()
+
+Syntax:
+        console.log(value / expression);
+        console.log("line-1 \n line-2");
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+       function AddClick(){
+           flag = confirm("Item will be added to Cart");
+           console.log("Add Button Clicked");
+           if(flag==true){
+             console.warn("OK Clicked");
+             document.querySelector("p").textContent = "Item Added to Cart";
+           } else {
+              console.error("Canceled");
+              document.querySelector("p").textContent = "";
+           }
+       }
+    </script>
+   
+</head>
+<body>
+    <button onclick="AddClick()" class="bi bi-cart2"> Add to Cart</button>
+    <p></p>
+</body>
+</html>
+
+                           JavaScript Input
+- It is the process of accepting value from user dynamically.
+- JavaScript can accept input from
+
+        a) prompt()
+        b) Query String
+        c) Form Elements
+
+Query String:
+- A query string is configured in the address bar of browser along with URL.
+- It is appended to URL by using "?".
+- Query string is a "Key & Value collection".
+
+            ?key=value
+
+- You can add multiple values
+
+            ?key1=value&key2=value&key3=value
+
+- You can access the query string and use in web page with Javascript location property
+           
+            "location.search"
+
+- To access specific portion of string you need string methods
+
+             slice()
+             indexOf()
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function bodyload(){
+            str = location.search;
+            document.querySelector("span").innerHTML = str.slice(str.indexOf("=")+1);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <p> Hello ! <span></span> </p>
+</body>
+</html>
+
+ - Enter the following in URL
+
+        http://127.0.0.1:5500/input.html?username=John
+
+
+Prompt:
+- Prompt is an input box provided by browser window.
+- It allows to input a value.
+
+Syntax:
+    prompt("message", "default_value");
+    prompt("expression", "default_value");
+    prompt("message/expression");
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function AddClick(){
+            folderName = prompt("Enter Folder Name","New_Folder");
+            if(folderName==""){
+                alert("Folder Name Required");
+            } else if(folderName==null){
+                alert("Canceled..");
+            } else {
+                document.querySelector("p").innerHTML += "Folder Created :" + folderName + "<br>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="AddClick()">Add Folder</button>
+    <p></p>
+</body>
+</html>
+
+Form Input Elements:
+- HTML provides several form input elements like textbox, password, email, url, checkbox, radio, listbox, dropdown, range etc.
+- JavaScript can accept input from various form elements.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inox</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script type="text/javascript">
+        function BookClick(){
+             document.getElementById("lblMovies").innerHTML =  document.getElementById("lstMovies").value;
+             document.getElementById("lblCinema").innerHTML = document.getElementById("lstCinema").value;
+             document.getElementById("lblDate").innerHTML = document.getElementById("lstDate").value;
+             document.getElementById("lblTime").innerHTML = document.getElementById("lstTime").value;
+             document.getElementById("lblSeats").innerHTML= document.getElementById("lstSeats").value;
+
+             movieName = document.getElementById("lstMovies").value;
+             if(movieName=="Eagle"){
+                document.getElementById("imgPoster").src = "../public/images/eagle.jpg";
+             } else {
+                document.getElementById("imgPoster").src = "../public/images/hanuman.jpg";
+             }
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <button class="btn btn-danger mt-2" data-bs-target="#booking" data-bs-toggle="modal">Quick Booking</button>
+    <div class="modal fade" id="booking">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Quick Booking - Cinema</h3>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <nav class="d-flex justify-content-between p-3">
+                        <div>
+                            <select id="lstMovies" class="form-select">
+                                <option>Select Movie</option>
+                                <option>Eagle</option>
+                                <option>HanuMan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="lstCinema" class="form-select">
+                                <option>Select Cinema</option>
+                                <option>Inox Bhills</option>
+                                <option>Inox KPHB</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="lstDate" class="form-select">
+                                <option>Select Date</option>
+                                <option>Today, Feb 15</option>
+                                <option>Tomorrow, Feb 16</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="lstTime" class="form-select">
+                                <option>Select Time</option>
+                                <option>10:30 AM</option>
+                                <option>10:45 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select id="lstSeats" class="form-select">
+                                <option>Select Seats</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button onclick="BookClick()" data-bs-dismiss="modal" class="btn btn-danger">Book</button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="w-25">
+        <dl>
+          <h3>Booking Summary</h3>
+          <img width="100%" height="300" id="imgPoster">
+          <dt>Movie</dt>
+          <dd id="lblMovies"></dd>
+          <dt>Cinema</dt>
+          <dd id="lblCinema"></dd>
+          <dt>Date</dt>
+          <dd id="lblDate"></dd>
+          <dt>Time</dt>
+          <dd id="lblTime"></dd>
+          <dt>Seats</dt>
+          <dd id="lblSeats"></dd>
+        </dl>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+
+
+Date: 17 feb 2024 -day5
+=========================================================
+
+JavaScript Variables
+- Declaring
+- Assignment
+- Initialization
+- var, let, const
+
+const:
+- It configures a block scope variable.
+- It supports only initialization.
+- It will not allow assignment & declaration.
+
+            const x;            // invalid
+            x = 10;            // invalid
+
+            const x = 10;        // valid
+            x = 20;            // invalid
+- It is not about readonly value, it is all about configuring a constant value from initialization to the end of function.
+- You can change the constant value again when you re-initialize memory.
+- It will not allow shadowing & hoisting.
+
+Variable Naming:
+- Name must start with an alphabet or "_" .  [ underscore is not officially recommended]
+- It should not start with number or special chars.
+- It can be alpha numeric with underscore.
+
+        var sales_2024;        //valid
+        var 2024_sales;        // invalid
+        var sales  2024;        // invalid
+        var sales.2024;        // invalid
+
+- It can't be any keyword of Javascript.
+
+        var while;            //invalid
+        var class;            // invalid
+
+- Always try using "camelCase" for naming.
+- A variable name must speak what it is.
+
+        var employeeName;
+        var btnLogin;
+        var product;
+        var products;
+
+- According to ECMA Standards variable name can't be more that 255 chars long.
+
+FAQ's: Variable Syntax
+
+1.    var x;
+       document.write("x=" + x);          
+       x=?
+       x=undefined
+
+2.   const x;
+      document.write("x=" + x);
+      x=?                        //Error - Missing Initializer
+
+3.   const x = 0;
+      x=10;
+      document.write("x=" + x);
+      x = ?                        //Error - Assignment to const variable
+
+4.   var x, y=10;
+      document.write("x=" + x + "y=" + y);
+   
+      x = undefined
+      y = 10
+
+5. Can we declare multiple variables with one keyword?
+A. Yes.
+    var x, y, z;
+    var x; y, z;        // invalid for y,z in strict mode.
+    var x; var y; var z;    // valid
+
+6.  var x=y=10;
+     document.write("x=" + x + "y=" + y);
+     x = ?    10        
+     y = ?    10
+
+7. How to initialize different values into multiple variables configured in one statement?
+
+    var x=10, y=20, z=30;                // old technique
+
+    var [x,y,z] = [10,20,30];                // ES6  destructure
+    var [x,y,z] = [10, 20];                // z=undefined
+    var [x,y]   = [10, 20, 30];                // 30 is ignored
+
+
+                     JavaScript Data Types
+
+- JavaScript is not a strongly typed language.
+- It is implicitly typed.
+
+        var x = 10;        x is number
+        x = "John";        x is string
+
+        var dob = 22-02-2024;        // invalid
+        var dob = 22/02/2024;        // invalid
+        var dob = 2024/02/22;        // invalid
+
+- Data type defines data structure, which specifies the type of data, format of data, limit for data and behaviour of data.
+
+- Data Types are classified into 2 groups
+
+        1. Primitive Data Types
+        2. Non-Primitive Data Types
+
+Primitive Data Types
+- They are immutable types.
+- They have a fixed range for value.
+- Their structure can't change dynamically.
+- They are stored in memory stack.
+- Stack uses "LIFO" [Last in-First out]
+- JavaScript primitive types are
+       
+            1. number
+            2. string
+            3. boolean
+            4. undefined
+            5. null
+            6. bigint
+            7. symbol
+
+
+                                   Number Type
+
+- Javascript number can be
+        Signed Integer         - 5
+        Unsigned Integer           5
+        Float                43.00
+        Double                346.40
+        Decimal                 34500.5673345  [29]
+        Exponent                2e3            [2000]    
+        Binary                0b1010         10
+        Hexa                0f00
+        Octa                    0o765
+        BigInt                9495858827n
+
+
+        Date: 19 feb 2024 -day6
+=========================================================
+
+JavaScript Primitive Data Types
+1. Number
+    signed integer, unsigned, float, double, decimal, exponent, binary, heax, octa,
+    bigint.
+
+- Every input of user from query string, form elements or prompt is by default "string".
+- You have to convert a string type numeric data into number.
+- Javascript converting methods are
+   
+        a) parseInt()
+        b) parseFloat()
+
+Syntax:
+        var a = parseInt("20AB");
+        var b = 30;
+        var c = a + b;                C=50
+
+        var a = parseInt("20AB40")    C =50
+        var a = parseInt("AB20")    C = NaN
+
+
+Note: A numeric string must always start with number and may have other chars.
+     It can translate upto the first occurance of numbers before a string char.
+
+- You can verify the value is a number type of not by using the function "isNaN()".
+- It returns boolean true if value is not a number.
+
+Syntax:
+            if (isNaN(age))
+            {
+            }
+            else
+            {
+            }
+Ex:
+<script type="text/javascript">
+          var age = parseInt(prompt("Enter Age"));
+          if(isNaN(age))
+          {
+               document.write("Age must be a number");
+          }
+          else
+          {
+               document.write("You will be " + (age+1) + " next year.");
+          }
+</script>
+
+Ex:
+<script type="text/javascript">
+          var rate = parseFloat(prompt("Enter Rate"));
+          if(isNaN(rate))
+          {
+               document.write("Rate must be a number");
+          }
+          else
+          {
+               document.write("Rate increased by 1% " + (rate+1) + " next year.");
+          }
+</script>
+
+- You can convert a number into string by using various methods.
+           
+            a) toString()
+            b) toLocaleString()
+
+- The method "toString()" converts a number into string, so that you can handle all string manipulations.
+
+- The method "toLocaleString()" converts number into a string with regional number formats.
+
+    var  price = 532456.45;
+           
+    document.write(price.toLocaleString("en-in", { style="currency", currency: "INR" });
+
+
+- To handle various manipulations on numeric values Javascript provides
+
+        a) Arithematic Operators
+        b) Math Functions
+
+Arithematic Operators
+   
+        +        Addition
+        -        Subtraction
+        *        Multiplication
+        /        Division
+        %        Modulus
+        **        Exponent   [ 2**3 ] = 8
+        ++        Increment
+        --        Decrement
+
+Math Functions
+        Math.sqrt()
+        Math.pow()
+        Math.round()
+        Math.random()
+        Math.sin()
+        Math.cos()
+        Math.PI
+        etc..
+
+Syntax:
+        Math.pow(base, value)
+        Math.round(57.77749888)
+       
+Ex: EMI Calculator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function AmountChange(){
+            document.getElementById("txtAmount").value = document.getElementById("rangeAmount").value;
+        }
+        function YearsChange(){
+            document.getElementById("txtYears").value = document.getElementById("rangeYears").value;
+        }
+        function RateChange(){
+            document.getElementById("txtRate").value = document.getElementById("rangeRate").value;
+        }
+
+        function CalculateClick(){
+             var P = parseInt(document.getElementById("txtAmount").value);
+             var r = parseFloat(document.getElementById("txtRate").value)/12/100;
+             var n = parseInt(document.getElementById("txtYears").value)*12;
+
+             var EMI = P * r * Math.pow(1+r,n) / Math.pow(1+r,n) - 1;
+
+             document.getElementById("lblResult").innerHTML = "Your Monthy Installment is <span class='h3 text-primary'>" + Math.round(EMI).toLocaleString("en-in",{style:"currency", currency:"INR"}) + " </span> For next " + n + " Months";
+
+        }
+    </script>
+</head>
+<body class="container-fluid bg-secondary">
+    <h1 class="text-white text-center">Personal Loan EMI Calculator</h1>
+    <div class="mt-4 bg-light text-dark p-3">
+      <div class="row mt-4">
+        <div class="col">
+            Amount you need &#8377; <input type="text" id="txtAmount" size="20">
+        </div>
+        <div class="col">
+            for <input type="text" size="4" id="txtYears"> Years
+        </div>
+        <div class="col">
+            Interest Rate <input type="text" id="txtRate" size="4"> %
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col">
+            &#8377;1,00,000 <input type="range" onchange="AmountChange()" id="rangeAmount" value="100000" min="100000" max="1000000"> &#8377; 10,00,000
+        </div>
+        <div class="col">
+            1 <input type="range" min="1" onchange="YearsChange()" id="rangeYears" value="5" max="5"> 5
+        </div>
+        <div class="col">
+            10.45% <input type="range" onchange="RateChange()" id="rangeRate" min="10.45" value="10.45" step="0.01" max="21.45"> 21.45%
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col text-end">
+            <button onclick="CalculateClick()" class="btn btn-primary">Calculate</button>
+        </div>
+      </div>
+      <p class="text-center" id="lblResult"></p>
+    </div>
+</body>
+</html>
+
+
+        Date: 21 feb 2024 -day7
+=========================================================
+
+Number Type
+
+                             String Type
+
+- String is a literal with group of characters enclosed in
+       
+        a) Double Quotes        "  "
+        b) Single Quotes        '   '
+        c) Back ticks            `  `
+
+- Double and Single quotes are used to configure outer & inner strings.
+
+        var link =  "<a  href='home.html'> Home </a>"
+        var link =  '<a  href="home.html"> Home </a>'
+
+- ES5+ version of Javascript provides  "backtick" for string, which can embed dynamic values by using data binding expression  "${  }"
+
+        `your string ${dynamicValue} your string`;
+
+- Data binding expression is not allowed in single or double quotes.
+
+Ex:
+<script>
+      var user = "John";
+      var age = 22;
+      var msg1 = "Hello" + "&nbsp;" + user + "&nbsp;" + "you will be" + "&nbsp;" + (age+1) + "&nbsp;" + "next year.<br>";
+      var msg2 = `Hello ${user} you will be ${age+1} next year.`;
+      document.write(msg1);
+      document.write(msg2);
+</script>
+
+- Several chars in a string a not printable, they escape printing.
+- To print non-printable character we have to use escape sequence character  "\".
+
+Syntax:
+             \\        =>  \
+             \"        =>  "
+            \n        => new line in console
+
+Ex:
+<script>
+      var path = "\"D:\\Images\\kids-fashion.jpg\"";
+      document.write(path);
+</script>
+
+- Javascript provides various methods for handling strings. It includes string formatting and manipulations.
+
+- String formatting methods are:
+
+            bold()
+            italics()
+            underline()
+            sup()
+            sub()
+            strike()
+            fontsize()
+            fontcolor()
+            toUpperCase()
+            toLowerCase()
+            etc..
+
+Syntax:
+            .innerHTML = "string".bold().fontcolor('red').fontsize(6).italics();
+            .innerText   = It will not support formats.
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyName(){
+            var username = document.getElementById("UserName").value;
+            var lblError = document.getElementById("lblError");
+            if(username=="john"){
+                lblError.innerHTML = "User Name Taken - Try Another".fontcolor('red').bold().italics();
+            } else {
+                lblError.innerHTML = "User Name Available".fontcolor('green');
+            }
+
+        }
+    </script>
+</head>
+<body>
+     <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" id="UserName" onkeyup="VerifyName()"></dd>
+        <dd id="lblError"></dd>
+     </dl>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function VerifyName(){
+            var username = document.getElementById("UserName").value;
+            var lblError = document.getElementById("lblError");
+            if(username=="john"){
+                lblError.innerHTML = "User Name Taken - Try Another".fontcolor('red').bold().italics();
+            } else {
+                lblError.innerHTML = "User Name Available".fontcolor('green');
+            }
+
+        }
+        function ChangeCase(){
+            var code = document.getElementById("txtCode").value;
+            document.getElementById("txtCode").value = code.toUpperCase();
+        }
+    </script>
+</head>
+<body>
+     <dl>
+        <dt>User Name</dt>
+        <dd><input type="text" id="UserName" onkeyup="VerifyName()"></dd>
+        <dd id="lblError"></dd>
+        <dt>IFSC Code</dt>
+        <dd><input type="text" id="txtCode" onblur="ChangeCase()" size="10"></dd>
+     </dl>
+</body>
+</html>
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ColorChange(){
+            var color = document.getElementById("txtColor").value;
+            document.querySelector("p").innerHTML = "Sample Text".fontcolor(color);
+        }
+    </script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+     <div>
+        <button class="bi bi-type-bold"></button>
+        <button class="bi bi-text-center"></button>
+        font <input type="number" min="1" max="7" value="1"> size
+        <input type="color" id="txtColor" onchange="ColorChange()">
+     </div>
+     <div class="container">
+        <p>Sample Text</p>
+     </div>
+</body>
+</html>
+
+Note: String formatting with HTML have limited set of methods. You can use CSS attributes to format dynamically.
+
+Syntax:
+             document.querySelector("p").style.attribute = value;
+
+      Every attribute is written in camelCase.
+
+            background-color            backgroundColor
+            text-align                    textAlign
+            font-size                    fontSize
+            font-weight                fontWeight
+            color                    color
+            text-shadow                textShadow
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ApplyClick(){
+            var h = document.getElementById("txtHoz").value;
+            var v = document.getElementById("txtVer").value;
+            var b = document.getElementById("txtBlur").value;
+            var color = document.getElementById("txtColor").value;
+            document.querySelector("p").style.textShadow = `${h}px ${v}px ${b}px ${color}`;
+        }
+    </script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <h4>Shadow Effects</h4>
+     <dl>
+        <dt>Horizontal</dt>
+        <dd><input type="range" min="1" max="15" value="1" id="txtHoz"></dd>
+        <dt>Vertical</dt>
+        <dd><input type="range" min="1" max="15" value="1" id="txtVer"></dd>
+        <dt>Blur</dt>
+        <dd><input type="range" min="1" max="15" value="1" id="txtBlur"></dd>
+        <dt>Color</dt>
+        <dd><input type="color" id="txtColor"></dd>
+     </dl>
+     <button onclick="ApplyClick()">Apply</button>
+     <div class="container" style="font-size: 50px;">
+        <p>Sample Text</p>
+     </div>
+</body>
+</html>
+
+Note: If there are many styles to apply then you can configure using class.
+     Javascript can apply CSS classes to any element by using the attribute
+     "className".
+
+    document.querySelector("p").innerHTML = cssClassName;
+
+
+Ex:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ThemeChange(){
+            var checkbox = document.getElementById("optTheme");
+            var form = document.querySelector("form");
+            var button = document.querySelector("button");
+            if(checkbox.checked){
+                form.className = "p-2 border border-2 bg-dark text-white";
+                button.className = "btn btn-light w-100";
+            } else {
+                form.className = "p-2 border border-2 bg-light text-dark";
+                button.className = "btn btn-dark w-100";
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <form class="p-3 border border-2">
+        <div class="form-switch">
+            <input type="checkbox" id="optTheme" onchange="ThemeChange()" class="form-check-input"> <label class="form-check-label"> Dark Mode </label>
+        </div>
+        <h2 class="bi bi-person-fill"> User Login</h2>
+        <dl>
+            <dt>User Name</dt>
+            <dd><input type="text" class="form-control"></dd>
+            <dt>Password</dt>
+            <dd><input type="password" class="form-control"></dd>
+        </dl>
+        <button class="btn btn-dark w-100">Login</button>
+    </form>
+</body>
+</html>
