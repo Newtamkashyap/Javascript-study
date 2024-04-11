@@ -1,4 +1,5 @@
 function ludoGame() {
+    // without argument
     let num = 5;
 
     if (num === 6) {
@@ -24,6 +25,7 @@ function ludoGame() {
 
 
 function ludo(num) {
+    // with agrument
     if (num === 6) {
         return "six"
     }
@@ -46,7 +48,7 @@ function ludo(num) {
 // console.log(ludo(1))
 
 function ludoGameDetail1() {
-    //with break statement
+    //without argument with break statement
     let num = 3
     switch (num) {
         case 1:
@@ -84,7 +86,7 @@ function ludoGameDetail1() {
 
 
 function ludoGameDetail(num) {
-// with return statement
+//  argument with return statement
     switch (num) {
         case 1:
             return "one";

@@ -62,3 +62,4 @@ return temp;
 
 console.log(printTable(12))
 
+

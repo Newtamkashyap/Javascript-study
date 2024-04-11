@@ -12,7 +12,7 @@ function personVote() {
 
 
 function vote(age) {
-    // with argument
+    // with argument.
     if (age >= 18) {
         return "You are eligible for vote";
     }
@@ -25,7 +25,7 @@ function vote(age) {
  console.log(vote(87))
 
 function voting(age) {
-    // using switch case
+    // using switch case.
     switch (true) {
         case (age >= 18 && age <= 28):
             return "They will vote in Zone2 ";
