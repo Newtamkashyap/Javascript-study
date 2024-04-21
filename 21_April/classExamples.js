@@ -24,9 +24,15 @@ class Resturant{
     foodItem4="Panner";
     foodItem5="Paneer_Tikka";
 
-    items(){
-        console.log("available")
+    VegItems(){
+        console.log("not available")
         return "out of stock";
+    }
+
+
+    nonVegItems(){
+        console.log("available")
+        return "In Stock";
     }
 
     
@@ -60,7 +66,8 @@ console.log(resturant3.foodItem4)
 resturant3.foodItem5="Prawns";
 console.log(resturant3.foodItem5)
 
-console.log(resturant3.items())
+console.log(resturant1.VegItems())
+console.log(resturant2.nonVegItems())
 
 
 
