@@ -24,6 +24,11 @@ class Resturant{
     foodItem4="Panner";
     foodItem5="Paneer_Tikka";
 
+    items(){
+        console.log("available")
+        return "out of stock";
+    }
+
     
     
 }
@@ -37,12 +42,25 @@ console.log("Resturant2_Menu",resturant2)
 
 
 let resturant3=new Resturant();
-console.log(resturant3.menu="Non-Vegitarian")
-console.log(resturant3.foodItem1="Chicken")
-console.log(resturant3.foodItem1="Fish")
-console.log(resturant3.foodItem1="Mutton")
-console.log(resturant3.foodItem1="Egg")
-console.log(resturant3.foodItem1="Prawns")
+resturant3.menu="Non-Vegitarian";
+console.log(resturant3.menu)
+
+resturant3.foodItem1="Chicken";
+console.log(resturant3.foodItem1)
+
+resturant3.foodItem2="Fish";
+console.log(resturant3.foodItem2)
+
+resturant3.foodItem3="Mutton";
+console.log(resturant3.foodItem3)
+
+resturant3.foodItem4="Egg";
+console.log(resturant3.foodItem4)
+
+resturant3.foodItem5="Prawns";
+console.log(resturant3.foodItem5)
+
+console.log(resturant3.items())
 
 
 
