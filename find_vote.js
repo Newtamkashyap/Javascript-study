@@ -69,7 +69,7 @@ function voting(age) {
     }
     
 }
-//Ash
+//Newtam
 console.log(voting(8))
 console.log(voting(18))
 console.log(voting(29))
