@@ -27,10 +27,25 @@ class Resturant{
     
     
 }
-let resturant=new Resturant();
-console.log(resturant.foodItem4);//getting the value
-resturant.foodItem2="Dum_Biryani"//setting the value
-console.log(resturant)
+let resturant1=new Resturant();
+console.log("resturant1_Menu",resturant1.foodItem4);//getting the value
+resturant1.foodItem2="Dum_Biryani"//setting the value
+// console.log(resturant1)
+
+let resturant2=new Resturant();
+console.log("Resturant2_Menu",resturant2)
+
+
+let resturant3=new Resturant();
+console.log(resturant3.menu="Non-Vegitarian")
+console.log(resturant3.foodItem1="Chicken")
+console.log(resturant3.foodItem1="Fish")
+console.log(resturant3.foodItem1="Mutton")
+console.log(resturant3.foodItem1="Egg")
+console.log(resturant3.foodItem1="Prawns")
+
+
+
 
 
 
