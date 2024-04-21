@@ -67,7 +67,9 @@ function voting(age) {
             return "They will vote First Zone1"
 
     }
+    
 }
+//Ashish
 console.log(voting(8))
 console.log(voting(18))
 console.log(voting(29))
