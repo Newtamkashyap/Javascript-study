@@ -55,10 +55,10 @@ function getStudentMarksDetails(hindiMarks, mathMarks, scienceMarks, socialMarks
     let percentage = (obtainedMarks / totalMarks) * 100
     console.log(percentage)
     let obj={hindiMarks:hindiMarks,englishMarks:englishMarks,mathMarks:mathMarks,scienceMarks:scienceMarks,socialMarks:socialMarks}
-    let obj1={hindiMarks:90,englishMarks:80,mathMarks:33,scienceMarks:40,socialMarks:60}
+    // let obj1={hindiMarks:90,englishMarks:80,mathMarks:33,scienceMarks:40,socialMarks:60}
 
     details.push(obj)
-    details.push(obj1)
+    // details.push(obj1)
     // details.push({name:"English",marks:englishMarks})
     // details.push({name:"social",marks:socialMarks})
     // details.push({name:"science",marks:scienceMarks})
@@ -75,7 +75,7 @@ function getStudentMarksDetails(hindiMarks, mathMarks, scienceMarks, socialMarks
 
 }
 
-// console.log(getStudentMarksDetails(8, 9, 30, 40, 50))
+//  console.log(getStudentMarksDetails(8, 9, 30, 40, 50))
 //  console.log(getStudentMarksDetails(80, 90, 60, 40, 50))
 
 //  hindi-30,science-50,social-60,math-70,english-88
@@ -88,9 +88,9 @@ function getStudentMarksDetails1(hindiMarks, scienceMarks, socialMarks, englishM
     let marks = (hindiMarks + scienceMarks + socialMarks + englishMarks + mathMarks)
     let percentage = (marks / totalMarks) * 100
     let data={mark:hindiMarks,name:"Hindi"}
-    let data1={mark:englishMarks,name:"English"}
-    let data2={mark:scienceMarks,name:"Science"}
-    let data3={mark:socialMarks,name:"Social"}
+    let data1={mark:scienceMarks,name:"Science"}
+    let data2={mark:socialMarks,name:"Social"}
+    let data3={mark:englishMarks,name:"English"}
     let data4={mark:mathMarks,name:"Math"}
     detail.push(data)
     detail.push(data1)
@@ -102,16 +102,14 @@ function getStudentMarksDetails1(hindiMarks, scienceMarks, socialMarks, englishM
     return detail;
 
 }
+console.log(getStudentMarksDetails(30,40,50,60,90))
 
-
-//  console.log(getStudentMarksDetails1(1,2,3,4,5))
-//  console.log(getStudentMarksDetails1(19,42,53,64,75))
-let detail=getStudentMarksDetails1(1,3,5,6,7);
- for(i=0;i<detail.length;i++){
-    console.log(detail[i].name+detail[i].mark)
+// let detail=getStudentMarksDetails1(1,3,5,6,7);
+//  for(i=0;i<detail.length;i++){
+//     console.log(detail[i].name+detail[i].mark)
     
 
- }
+//  }
 
 
 
