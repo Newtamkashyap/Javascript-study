@@ -28,8 +28,8 @@ class Resturant{
     
 }
 let resturant=new Resturant();
-console.log(resturant.foodItem4);
-resturant.foodItem2="Dum_Biryani"
+console.log(resturant.foodItem4);//getting the value
+resturant.foodItem2="Dum_Biryani"//setting the value
 console.log(resturant)
 
 
