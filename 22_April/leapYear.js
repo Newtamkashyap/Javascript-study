@@ -2,12 +2,18 @@
 
 function findLeapYear(year){
     const leap=new Date(year,1,29).getDate()===29;
+    
     if(leap){
-        console.log(year + "leap year");
+        console.log(year + "is leap year");
     }
     else{
         console.log(year + "is not leap year");
     }
 }
-findLeapYear(2024)
+// findLeapYear(2024)
+
+console.log(new Date(2024,1,29).getDate());
+
+
+
 
