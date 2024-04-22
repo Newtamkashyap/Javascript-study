@@ -44,7 +44,7 @@ resturant1.foodItem2="Dum_Biryani"//setting the value
 // console.log(resturant1)
 
 let resturant2=new Resturant();
-console.log("Resturant2_Menu",resturant2)
+// console.log("Resturant2_Menu",resturant2)
 
 let resturant3=new Resturant();
 resturant3.menu="Non-Vegitarian";
@@ -53,12 +53,18 @@ resturant3.foodItem2="Fish";
 resturant3.foodItem3="Mutton";
 resturant3.foodItem4="Egg";
 resturant3.foodItem5="Prawns";
-console.log("Resturant3_Items",resturant3)
+// console.log("Resturant3_Items",resturant3)
 
-console.log(resturant1.VegItems())
-console.log(resturant2.nonVegItems())
+// console.log(resturant1.VegItems())
+// console.log(resturant2.nonVegItems())
 
+function hello(n){
 
+    // return (10>9);
+    let m=prompt("enter the name")
+    return m;
+}
+console.log(hello())
 
 
 
