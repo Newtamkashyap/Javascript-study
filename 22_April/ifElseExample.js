@@ -9,4 +9,8 @@ function pairOfNumber(num1, num2) {
         return "false";
     }
 }
-console.log(pairOfNumber(10, 30));
+console.log("print line number1=",pairOfNumber(10, 30));//false
+console.log(pairOfNumber(20, 30));//true
+console.log(pairOfNumber(10, 50));//true
+console.log(pairOfNumber(50, 30));//true
+console.log(pairOfNumber(50, 50));//true
