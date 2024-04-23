@@ -33,4 +33,4 @@ function findLargestNumber(a,b,c){
 
     }
 }
- findLargestNumber(10100,300,2000);
+ findLargestNumber(10000,3000,2000);
