@@ -17,7 +17,8 @@ function checking(){
     const elements=["java","python","html","javaPoint","javascript"];
     for(let i of elements){
         if(i.startsWith("java")){
-            console.log(i)
+            console.log(i,",length =" , i.length)
+            // console.log(i.length)
         }
       
     }
