@@ -13,4 +13,4 @@ function checking_number(a, b) {
 
     
 }
-checking_number(40, 55);
+checking_number(4, -3);
