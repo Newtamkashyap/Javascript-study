@@ -5,8 +5,9 @@ class hospital {
     patientRoomNumber;
     patientStage;
 
-    doctorDetails(doctorName) {
-        return doctorName;
+    doctorDetails(doctorName,specialist) {
+        console.log(doctorName);
+        console.log(specialist);
     }
     nurseDetails(nurseName) {
         return nurseName;
@@ -17,7 +18,7 @@ let patient1 = new hospital();
 console.log("Patient 1 Details :");
 console.log("===================================");
 console.log("Doctor Assigned to patient 1 :");
-console.log(patient1.doctorDetails("shyresh"));
+patient1.doctorDetails("shyresh,kidneyspecialist");
 console.log("Nurse Assigned to patient 1 :");
 console.log(patient1.nurseDetails("Divya"));
 patient1.patientName = "Mohan";
@@ -32,7 +33,7 @@ let patient2 = new hospital();
 console.log("Patient 2 Details :");
 console.log("===================================");
 console.log("Doctor Assigned to patient 2 :");
-console.log(patient2.doctorDetails("Rupa"));
+patient2.doctorDetails("Rupa , heartspecialist");
 
 console.log("Nurse Assigned to patient 2 :");
 console.log(patient2.nurseDetails("Riya"));
@@ -49,7 +50,7 @@ let patient3 = new hospital();
 console.log("Patient 3 Details :");
 console.log("===================================");
 console.log("Doctor Assigned to patient 3 :");
-console.log(patient3.doctorDetails("Jony"));
+patient3.doctorDetails("Jony , neurospecialist");
 console.log("Nurse Assigned to patient 3 :");
 console.log(patient3.nurseDetails("Pooja"));
 patient3.patientName = "Sohan";
