@@ -2,15 +2,18 @@
 'Error' if the second number is zero.*/
 
 function throwCustomeErrors(num1, num2) {
-    try {
-        if (num1 >= 0 && num2 > 0) {
+    
+        if (num1 >= 0 || num2 > 0) {
+           
+        }
+        try{
             throw "true";
         }
-    }
+    
     catch (error) {
-        console.log("Number should be greater than zero");
+        console.log("num2 also should be greater than zero",error);
     }
-
 
 
 }
+throwCustomeErrors(0,0);
