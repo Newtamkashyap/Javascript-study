@@ -1,19 +1,13 @@
 /* 5. Write a JavaScript function that takes an array as a parameter and throws
  a custom 'Error' if the array is empty.*/
 
-function throwCustomeErrors(num1) {
-    try {
-        let arr=[""];
-        if (num1=arr) {
+function throwCustomeErrors(arr) {
+  console.log("Array length is",arr.length);
+        if (arr.length==0) {
+
             throw "array is empty";
         }
         
-    }
-    catch (error) {
-        console.log("exception raised", error);
-    }
-
-
 }
-throwCustomeErrors([]);
-throwCustomeErrors(["1", "2", "3", "5"]);
+ throwCustomeErrors([]);
+ throwCustomeErrors(["1", "2", "3", "5"]);

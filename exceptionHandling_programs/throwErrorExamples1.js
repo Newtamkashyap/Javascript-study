@@ -2,23 +2,20 @@
 'Error' if the second number is zero.*/
 
 function throwCustomeErrors(num1, num2) {
+    console.log("input number is", num1, num2);
 
-    try {
-
-        if (num1 >= 0 && num2 > 0) {
-            console.error("true") ;
-        }
+    if (num2 == 0) {
+        throw "second number is zero";
 
     }
 
-    catch (error) {
-        console.error("exception raised", error);
-    }
+
+
 
 
 }
-throwCustomeErrors(2,4);
-throwCustomeErrors(1,0);
+throwCustomeErrors(20, 4);
+// throwCustomeErrors(1, 0);
 // throwCustomeErrors("Line3 Error"+0,0);
 // throwCustomeErrors("Line4 Error"+1,8)
 // throwCustomeErrors("Line5 Error"+0,4)

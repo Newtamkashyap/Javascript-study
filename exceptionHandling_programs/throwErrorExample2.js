@@ -3,15 +3,12 @@ throws a custom 'Error' if the number is negative.*/
 
 
 function throwCustomeErrors(num1) {
-    try {
-        if (num1 >= 0) {
-            throw "true";
+   console.log("number is",num1);
+        if (num1<0) {
+            throw "Negative";
         }
-    }
-    catch (error) {
-        console.log("Number should not be negative");
-    }
+    
 
 
 }
-throwCustomeErrors(3)
+throwCustomeErrors(0);

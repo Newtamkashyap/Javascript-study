@@ -2,17 +2,23 @@
  throws a custom 'Error' if the number is not an integer.*/
 
 function throwCustomeErrors(num) {
-    try {
-        if (isInteger()=== num) {
+   
+        console.log("printing type of num is", typeof num);
+        if (typeof num == "number") {
             console.log("integer");
-            // throw "integer"
         }
-    }
-    catch (error) {
-        console.log( "not an integer number",error);
+        else{
+            throw "number is not an integer";
+        }
 
     }
+    
+ 
+//  throwCustomeErrors(8);
+// throwCustomeErrors("nnn");
+throwCustomeErrors([1]);
+// throwCustomeErrors();
 
-    }
- throwCustomeErrors(8);
-    // console.log(throwCustomeErrors(6));
+
+// throwCustomeErrors('');
+// console.log(throwCustomeErrors(6));
