@@ -14,3 +14,4 @@ function throwCustomeErrors(num1) {
 
 
 }
+throwCustomeErrors(3)

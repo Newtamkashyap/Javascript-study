@@ -3,16 +3,16 @@
 
 function throwCustomeErrors(num) {
     try {
-        if (typeof num === "digit") {
+        if (isInteger()=== num) {
             console.log("integer");
             // throw "integer"
         }
     }
     catch (error) {
-        console.log( "not an integer number");
+        console.log( "not an integer number",error);
 
     }
 
     }
- throwCustomeErrors(8)
+ throwCustomeErrors(8);
     // console.log(throwCustomeErrors(6));
