@@ -33,7 +33,7 @@ Range	Grade
             console.log("A grade");
         }
     }
-    find_avergae_marks_of_students("rohit",80);
+    find_avergae_marks_of_students(80);
     find_avergae_marks_of_students(77);
 
     find_avergae_marks_of_students(88);
