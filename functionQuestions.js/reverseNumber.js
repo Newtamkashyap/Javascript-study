@@ -6,7 +6,7 @@ function reverse_a_number(num) {
 
 console.log("Reversing the original number",num)
 let result = num.toString().split('').reverse().join('');
-return(result);
+return result;
 }
 
 console.log(reverse_a_number(83455566));

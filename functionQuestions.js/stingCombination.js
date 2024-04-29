@@ -3,12 +3,15 @@ Example string : 'dog'
 Expected Output : d,do,dog,o,og,g */
 
 function generate_combination_ofString(str) {
-    let arr=[];
-    for (i= 0; i <= str.length; i++) {
-        console.log("string length is = ",str.length);
-        arr.push(str);
-        return arr;
-    }
+    // let arr=[];//arr.length=4.
+    
+     for (i= 0; i < str.length; i++) {
+        // console.log(str[0]);
+        console.log(i);
+        
+     }
 
 }
-console.log(generate_combination_ofString("dog"));
+// generate_combination_ofString("dog.animal");
+generate_combination_ofString("dog");
+

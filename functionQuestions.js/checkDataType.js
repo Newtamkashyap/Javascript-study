@@ -4,20 +4,21 @@ number, string, and undefined. */
 
 function hello(a){
     
-    return a;
+    return typeof a;
 
 }
-console.log(typeof(hello("newtam")));
-console.log(typeof(hello(true)));
 
-console.log(typeof(hello(1)));
+console.log(hello("newtam"));
+console.log(hello(true));
 
-console.log(typeof(hello({name:"netam",age:24})));
+console.log(hello(1));
 
-console.log(typeof(hello([1])));
-console.log(typeof(hello()));
-console.log(typeof(hello(function(){})));
-console.log(typeof(hello(null)));
+// console.log(typeof(hello({name:"netam",age:24})));
+
+// console.log(typeof(hello([1])));
+// console.log(typeof(hello()));
+// console.log(typeof(hello(function(){})));
+// console.log(typeof(hello(null)));
 
 /*NOTE:-
 The data type of NaN is number

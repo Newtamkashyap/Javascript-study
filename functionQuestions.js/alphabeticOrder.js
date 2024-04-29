@@ -2,7 +2,7 @@
 Example string : 'webmaster'
 Expected Output : 'abeemrstw'
 Assume punctuation and numbers symbols are not included in the passed string. */
-//Q-validation 
+//Q-validation.
 
 function arranging_in_alphabetical_order(str){
      console.log("original string is =",str);
@@ -11,8 +11,6 @@ function arranging_in_alphabetical_order(str){
         console.log("after arranging string is =",str);
         return str,"Hence, string is in alphabetical order"
     }
-  
-
 }
 // console.log(arranging_in_alphabetical_order("abcd"));//abcd
 // console.log(arranging_in_alphabetical_order("0809"));//0089

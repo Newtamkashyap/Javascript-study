@@ -6,7 +6,7 @@ Expected Output : 'The Quick Brown Fox ' */
 function convertFirstLetter_in_uppercase(str){
     if(str==str.toLowerCase()){
         
-        console.log(str.toUpperCase())
+        console.log(str.toUpperCas())
     }
 else{
     console.log("not in lower case");
