@@ -15,9 +15,10 @@ clouserExample(3);
 function outer(x) {
     function inner(y) {
         var z = x + y;
-        console.log(z)
+        // console.log(z)
+        return z;
     }
-    inner(100);
+    console.log(inner(100));
 }
 outer(200);
 

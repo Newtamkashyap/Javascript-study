@@ -19,7 +19,7 @@ function employeeDetails() {
     console.log(employee.empName)
 }
 
-//  employeeDetails()
+ employeeDetails()
 
 
 class Person {
@@ -46,7 +46,7 @@ function personDetails() {
     console.log(person.state)
 
 }
-// personDetails()
+//  personDetails()
 
 
 
@@ -73,6 +73,6 @@ function train_Sheats_Availability() {
 
 
 }
-train_Sheats_Availability()
+// train_Sheats_Availability()
 
 
